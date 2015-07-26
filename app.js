@@ -23,10 +23,10 @@ if(argv.indexOf('--project') >= 0){
 var zmq = require('zmq')
     , dispatcher = zmq.socket('pub')
     , acceptor = zmq.socket('pull')
-    , dispatcherPort =  "8071"
-    , dispatcherAddress =  "127.0.0.1"
-    , acceptorPort =  "8072"
-    , acceptorAddress =  "127.0.0.1";
+    , dispatcherPort =  GLOBAL.pjconfig.dispatcher.port
+    , dispatcherAddress =   GLOBAL.pjconfig.dispatcher.address
+    , acceptorPort =   GLOBAL.pjconfig.acceptor.port
+    , acceptorAddress =   GLOBAL.pjconfig.acceptor.address;
 
 
 
