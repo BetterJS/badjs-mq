@@ -4,7 +4,7 @@ var  log4js = require('log4js'),
      logger = log4js.getLogger();
 
 
-
+var argv = process.argv.slice(2);
 
 if(argv.indexOf('--debug') >= 0){
     logger.setLevel('DEBUG');
@@ -34,7 +34,7 @@ acceptor.bindSync("tcp://" + acceptorAddress + ":" + acceptorPort);
 dispatcher.bindSync("tcp://" + dispatcherAddress + ":" + dispatcherPort);
 
 
-acceptor.("message" , function (data){
+acceptor.on("message" , function (data){
     logger.debug(data.toString());
     dispatcher.send(data);
 })
