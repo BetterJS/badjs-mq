@@ -1,0 +1,10 @@
+{
+    "dispatcher": {
+        "port": 10000,
+        "address": "10.143.132.205"
+    },
+    "acceptor": {
+        "port": 10001,
+        "address": "127.0.0.1"
+    }
+}
