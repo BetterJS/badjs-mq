@@ -38,3 +38,5 @@ acceptor.on("message" , function (data){
     logger.debug(data.toString());
     dispatcher.send(data);
 })
+
+logger.info("start badjs-mq success. ");
