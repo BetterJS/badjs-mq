@@ -3,11 +3,12 @@
 > Message-queue system based on ZMQ.
 
 # 启动参数
---debug  log 采用debug 级别
+--debug  log 采用debug 级别, 默认使用info 
 
---project 使用测试环境（ project.debug.json ）配置
+--project 使用测试环境（ project.debug.json ）配置 ， 默认使用 project.json
 
 # 配置说明
+```
 {
     "dispatcher": {  // 分发出去的地址
         "port": 10000,
@@ -18,3 +19,4 @@
         "address": "127.0.0.1"
     }
 }
+```
