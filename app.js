@@ -1,6 +1,7 @@
 'use strict';
 
 var  log4js = require('log4js'),
+     childProcess = require("child_process"),
      logger = log4js.getLogger();
 
 var path = require("path");
@@ -35,6 +36,7 @@ var zmq = require('zmq')
 acceptor.bindSync("tcp://" + acceptorAddress + ":" + acceptorPort);
 dispatcher.bindSync("tcp://" + dispatcherAddress + ":" + dispatcherPort);
 
+var openApiServer = childProcess.fork(__dirname + '/openApiService.js', argv)
 
 acceptor.on("message" , function (data){
     logger.debug(data.toString());

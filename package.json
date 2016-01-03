@@ -5,7 +5,9 @@
   "main": "app.js",
   "dependencies": {
     "log4js": "^0.6.2",
-    "zmq": "^2.8.0"
+    "connect": "^2.25.7",
+    "underscore": "^1.8.3",
+    "zmq": "^2.11.0"
   },
   "scripts": {
     "test": ""
