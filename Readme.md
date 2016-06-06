@@ -1,6 +1,6 @@
 #badjs-message
 
-> Message-queue system based on ZMQ.
+> Message-queue system based 
 
 # 启动参数
 --debug  log 采用debug 级别, 默认使用info 
