@@ -13,6 +13,9 @@
         "syncProjects":{
             "port" : 9002
         }
+    },
+    "mq" : {
+        "module" : "axon"
     }
 
 }

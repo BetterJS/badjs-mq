@@ -23,9 +23,9 @@ if(argv.indexOf('--project') >= 0){
 }
 
 
-var zmq = require('zmq')
-    , dispatcher = zmq.socket('pub')
-    , acceptor = zmq.socket('pull')
+var mq = require(GLOBAL.pjconfig.mq.module)
+    , dispatcher = mq.socket('pub')
+    , acceptor = mq.socket('pull')
     , dispatcherPort =  GLOBAL.pjconfig.dispatcher.port
     , dispatcherAddress =   GLOBAL.pjconfig.dispatcher.address
     , acceptorPort =   GLOBAL.pjconfig.acceptor.port
@@ -33,8 +33,9 @@ var zmq = require('zmq')
 
 
 
-acceptor.bindSync("tcp://" + acceptorAddress + ":" + acceptorPort);
-dispatcher.bindSync("tcp://" + dispatcherAddress + ":" + dispatcherPort);
+acceptor[acceptor.bindSync ? 'bindSync' : 'bind']("tcp://" + acceptorAddress + ":" + acceptorPort);
+
+dispatcher[acceptor.bindSync ? 'bindSync' : 'bind']("tcp://" + dispatcherAddress + ":" + dispatcherPort);
 
 var openApiServer = childProcess.fork(__dirname + '/openApiService.js', argv)
 

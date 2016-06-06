@@ -1,5 +1,4 @@
 var net = require('net');
-var zmq = require('zmq');
 var _ = require("underscore");
 var crypto = require('crypto');
 
@@ -30,6 +29,7 @@ if(argv.indexOf('--project') >= 0){
 }
 
 
+var zmq = require(GLOBAL.pjconfig.mq.module);
 
 var readyClient = [];
 var clientMapping = {};
