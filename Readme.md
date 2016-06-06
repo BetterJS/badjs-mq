@@ -1,6 +1,6 @@
 #badjs-message
 
-> Message-queue system based 
+> Message-queue system 
 
 # 启动参数
 --debug  log 采用debug 级别, 默认使用info 
