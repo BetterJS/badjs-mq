@@ -17,6 +17,9 @@
     "acceptor": {   // 接受数据的地址
         "port": 10001,
         "address": "127.0.0.1"
+    },
+    "mq" : {
+        "module" : "axon"  // 指定mq 模块
     }
 }
 ```
