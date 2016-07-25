@@ -205,8 +205,14 @@ var server  = net.createServer(function (c) { //'connection' listener
     logger.info('client connected , id=' + c.ext.id);
 
     c.on('data', function (data) {
-        var data = JSON.parse(data.toString());
-        processClientMessage(data, this);
+        try{
+          var data = JSON.parse(data.toString());
+          processClientMessage(data, this);
+        }catch(e){
+          this.destroy();
+          removeClient(this);
+          logger.info("client parse error , and close :" + e)
+        }
     });
 
     c.on('close', function () {
