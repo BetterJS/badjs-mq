@@ -84,6 +84,11 @@ var startService = function () {
 
     appKeyList = processProjectId(fs.readFileSync(dbPath, "utf-8"));
 
+    process.once("disconnect" , function (){
+        logger.info("master is exited , exiting... ")
+        process.exit(0);
+    })
+
 
     connect()
         .use('/getProjects', connect.query())
