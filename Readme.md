@@ -10,8 +10,8 @@
 # 配置说明
 ```
 {
-    "dispatcher": {  // 分发出去的地址
-        "port": 10000,
+    "dispatcher": {  // 分发出去的地址（指向 badjs-storage 地址）
+        "port": 10000,
         "address": "10.143.132.205"
     },
     "acceptor": {   // 接受数据的地址
